@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=mapgd	        # Job name
+#SBATCH --job-name=mapgd	    # Job name
 #SBATCH --ntasks=1                  # CPU
 #SBATCH --mem=5gb                   # Job memory request
 #SBATCH --time=24:00:00             # Time limit hrs:min:sec
