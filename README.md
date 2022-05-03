@@ -23,7 +23,7 @@ The example data used here was downloaded from the *Arabidopsis* 1001 Genomes Pr
 ## Submit the job to HPC cluster
 
 ```
-sbatch mapgd_pipe.sh
+sbatch workflow/mapgd_pipe.sh
 ```
 
 ## Expected results
