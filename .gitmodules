@@ -1,0 +1,3 @@
+[submodule "lib/MAPGD"]
+	path = lib/MAPGD
+	url = https://github.com/LynchLab/MAPGD
