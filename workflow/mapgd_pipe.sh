@@ -5,7 +5,6 @@
 #SBATCH --time=24:00:00             # Time limit hrs:min:sec
 #SBATCH --output=mapgd_%j.log       # Standard output and error log
 
-
 # Load necessary modules
 module load GSL/2.6-GCC-9.3.0
 module load samtools/1.9
@@ -41,5 +40,17 @@ samtools view -H Alc-0.sort.bam > Arabidopsis.header
 # Generate mpileup file
 samtools mpileup -q 25 -Q 25 -B Alc-0.filtered.sort.bam Jea.filtered.sort.bam Oy-0.filtered.sort.bam Ri-0.filtered.sort.bam Sakata.filtered.sort.bam > Arabidopsis.mpileup
 
-# Convert .mpileup file to .pro file
+# Generate mpileup file
+samtools mpileup -q 25 -Q 25 -B Alc-0.filtered.sort.bam Jea.filtered.sort.bam Oy-0.filtered.sort.bam Ri-0.filtered.sort.bam Sakata.filtered.sort.bam > Arabidopsis.mpileup
+
+# Make a pro file of nucleotide-read quartets (counts of A, C, G, and T) from the mpileup file
 mapgd proview -i Arabidopsis.mpileup -H Arabidopsis.header > Arabidopsis.pro
+
+# Run the allele command to estimate allele and genotype frequencies from the pro file.
+mapgd allele -i Arabidopsis.pro -o Arabidopsis
+
+# Run the genotype command to generate a file of genotype likelihoods.
+mapgd genotype -p Arabidopsis.pro -m Arabidopsis.map > Arabidopsis.genotype
+
+# Run the relatedness command.
+mapgd relatedness -i Arabidopsis.genotype -o Arabidopsis.rel
