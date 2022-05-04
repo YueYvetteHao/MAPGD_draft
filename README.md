@@ -32,6 +32,7 @@ sbatch workflow/mapgd_pipe.sh
 - Make a pro file of nucleotide-read quartets (counts of A, C, G, and T) from the mpileup file.
 - Run the allele command to estimate allele and genotype frequencies from the pro file.
 - Determine the minimum and maximum population-coverage cut-off values by making a histogram of the population coverage.
+![](graphs/Coverage.png)
 - Run the filter command to filter the map file of ML estimates of the parameters.
 - Run the genotype command to generate a file of genotype likelihoods.
 - Run the relatedness command.
