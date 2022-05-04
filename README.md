@@ -26,46 +26,14 @@ sbatch workflow/mapgd_pipe.sh
 ## Basic steps
 
 - Sort bam files and [filter](https://broadinstitute.github.io/picard/explain-flags.html) for mapped reads.
-```
-input='filelist.txt'
-while IFS= read -r line
-do
-        echo $line
-        samtools sort -o $line.sort.bam $line.bam
-        samtools view -q 20 -f 3 -F 3844 -b $line.sort.bam > $line.filtered.sort.bam
-        samtools index $line.filtered.sort.bam
-done < $input
-```
-
 - Get header file.
-```
-samtools view -H Alc-0.sort.bam > Arabidopsis.header
-```
-
 - Generate mpileup file.
-```
-samtools mpileup -q 25 -Q 25 -B Alc-0.filtered.sort.bam Jea.filtered.sort.bam Oy-0.filtered.sort.bam Ri-0.filtered.sort.bam Sakata.filtered.sort.bam > Arabidopsis.mpileup
-```
-
 - Make a pro file of nucleotide-read quartets (counts of A, C, G, and T) from the mpileup file.
-```
-mapgd proview -i Arabidopsis.mpileup -H Arabidopsis.header > Arabidopsis.pro
-```
-
 - Run the allele command to estimate allele and genotype frequencies from the pro file.
-```
-mapgd allele -i Arabidopsis.pro -o Arabidopsis
-```
-
+- Determine the minimum and maximum population-coverage cut-off values by making a histogram of the population coverage.
+- Run the filter command to filter the map file of ML estimates of the parameters.
 - Run the genotype command to generate a file of genotype likelihoods.
-```
-mapgd genotype -p Arabidopsis.pro -m Arabidopsis.map > Arabidopsis.genotype
-```
-
 - Run the relatedness command.
-```
-mapgd relatedness -i Arabidopsis.genotype -o Arabidopsis.rel
-```
 
 ## Expected results
 
