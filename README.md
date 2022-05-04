@@ -12,6 +12,7 @@
 - __Required software and versions__: 
     - [SAMtools v1.9](http://www.htslib.org/)
     - [MAPGD v0.4.38](https://github.com/LynchLab/MAPGD) 
+    - [R v4.1.3](https://www.r-project.org/) for visualization
 
 ## Input Data
 
