@@ -11,7 +11,7 @@
 
 - __Required software and versions__: 
     - [SAMtools v1.9](http://www.htslib.org/)
-    - [MAPGD v0.4.38](https://github.com/LynchLab/MAPGD) 
+    - [MAPGD v0.4.40](https://github.com/LynchLab/MAPGD) 
     - [R v4.1.3](https://www.r-project.org/) for visualization
 
 ## Input Data
@@ -44,4 +44,4 @@ Heterozygosity scan across every 100kb window on each chromosome.
 ![](graphs/Heterozygosity.png)
 
 ## License
-MAPGD is a free and open source software, licensed under [GPLv3](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gpl-3.0.txt).
+[MAPGD](https://github.com/LynchLab/MAPGD) is a free and open source software, licensed under [GPLv3](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gpl-3.0.txt).
