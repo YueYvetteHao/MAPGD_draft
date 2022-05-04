@@ -2,9 +2,7 @@
 
 # MAPGD for plants
 
-## Overview of an example workflow: Fastq data quality checking
-
-MAPGD for plants.
+## A simple workflow for population analysis using MAPGD. For software download and the complete manual, please check out the [MAPGD](https://github.com/LynchLab/MAPGD) page.
 
 ## Installation
 
