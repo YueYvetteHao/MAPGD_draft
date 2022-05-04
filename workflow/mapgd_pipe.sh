@@ -53,7 +53,7 @@ awk '{print $6}' Arabidopsis.map > Arabidopsis_coverage.txt
 # Make the coverage histogram in R.
 
 # Run the filter command to filter the map file of ML estimates of the parameters.
-mapgd filter -i Arabidopsis.map -p 20 -q 0.05 -Q 0.45 -c 10 -C 250 -o filtered_Arabidopsis.map
+mapgd filter -i Arabidopsis.map -p 20 -q 0.05 -Q 0.45 -c 10 -C 250 -o filtered_Arabidopsis
 #-p: minimum value of the likelihood-ratio test statistic for polymorphism 
 #-q: minimum minor-allele frequency estimate
 #-Q: maximum minor-allele frequency estimate
