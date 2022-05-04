@@ -2,7 +2,7 @@
 
 # MAPGD for plants
 
-## A simple workflow for population analysis using MAPGD. For software download and the complete manual, please check out the [MAPGD](https://github.com/LynchLab/MAPGD) page.
+## A simple workflow for population analysis using MAPGD. For software download and the complete manual, please visit the [MAPGD](https://github.com/LynchLab/MAPGD) page.
 
 ## Installation
 
@@ -35,6 +35,7 @@ sbatch workflow/mapgd_pipe.sh
 ![](graphs/Coverage.png)
 - Run the filter command to filter the map file of ML estimates of the parameters.
 - Run the genotype command to generate a file of genotype likelihoods.
+- Randomly subsample a group of SNPs.
 - Run the relatedness command.
 
 ## Expected results
