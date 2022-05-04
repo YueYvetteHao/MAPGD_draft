@@ -12,7 +12,7 @@ See [MAPGD](https://github.com/LynchLab/MAPGD) page for detailed descriptions of
 	
 ## Arabidopsis_het.txt	
 
-Extracted heterozigosity scores from filtered_Arabidopsis.map.
+Extracted heterozygosity scores from filtered_Arabidopsis.map.
 
 ## wh_wf_F_Arabidopsis.genotype
 
