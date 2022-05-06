@@ -68,7 +68,7 @@ mapgd genotype -p Arabidopsis.clean.pro -m filtered_Arabidopsis.map > Arabidopsi
 awk '{if ($3 != "MN_FREQ" && $3 >= 0.0 && $3 <= 1.0) print}' Arabidopsis.genotype > f_Arabidopsis.genotype
 # Extract the header from the file of genotype likelihoods
 head -n -1 Arabidopsis.genotype | awk '{if ($3 == NULL || $1 ~ /^@/) print}' > header_Arabidopsis.genotype
-# Add footer which contains "@END_TABLE\n"
+# Add footer which contains "@END_TABLE"
 footer_Arabidopsis.genotype
 # For large dataset: subsample a group of SNPs
 sub_sample.py F_Arabidopsis.genotype -N 200000 > 200K_F_Arabidopsis.genotype
