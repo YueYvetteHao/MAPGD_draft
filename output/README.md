@@ -1,4 +1,4 @@
-MAPGD output files are stored on [Figshare](https://figshare.com/s/9664c525c264ce379d0c).
+MAPGD output files are stored on [Figshare](https://figshare.com/s/070da50efcac742a25e2).
 
 See [MAPGD](https://github.com/LynchLab/MAPGD) page for detailed descriptions of file types.
 
@@ -10,13 +10,21 @@ See [MAPGD](https://github.com/LynchLab/MAPGD) page for detailed descriptions of
 
 .idx files list the name and size of all the scaffolds in a reference genome. This file can be obtained from a .bam file using the samtools view -H command and reformatting the samtools header with the 'sam2idx' command. Idx files are automatically generated when running the proview command.
 	
-## Arabidopsis_het.txt	
+## Arabidopsis_stats.txt	
 
-Extracted heterozygosity scores from filtered_Arabidopsis.map.
+Extracted heterozygosity scores and allele frequencies from filtered_Arabidopsis.map.
 
 ## wh_wf_F_Arabidopsis.genotype
 
 The output of the genotype command. This stores the -log likelihood values that an individual is each of the three possible genotypes (Major Major, Major minor or minor minor) at each locus.
+
+## header_Arabidopsis.genotype
+
+Header file for genotype file formating.
+
+## footer_Arabidopsis.genotype
+
+Footer file for genotype file formating.
 
 ## Arabidopsis.rel		
 
