@@ -40,8 +40,8 @@ sbatch workflow/mapgd_pipe.sh
 
 ## Expected results
 
-Heterozygosity scan across every 100kb window on each chromosome.
-![](graphs/Heterozygosity.png)
+Average heterozygosity and minor allele frequency across every 100kb window on each chromosome.
+![](graphs/het_freq.png)
 
 ## License
 [MAPGD](https://github.com/LynchLab/MAPGD) is a free and open source software, licensed under [GPLv3](https://github.com/github/choosealicense.com/blob/gh-pages/_licenses/gpl-3.0.txt).
