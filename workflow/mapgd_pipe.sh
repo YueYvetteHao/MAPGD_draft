@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=mapgd	    # Job name
-#SBATCH --ntasks=1                  # CPU
-#SBATCH --mem=5gb                   # Job memory request
+#SBATCH --ntasks=4                  # CPU
+#SBATCH --mem=10gb                   # Job memory request
 #SBATCH --time=24:00:00             # Time limit hrs:min:sec
 #SBATCH --output=mapgd_%j.log       # Standard output and error log
 
@@ -63,5 +63,19 @@ mapgd filter -i Arabidopsis.map -p 20 -q 0.05 -Q 0.45 -c 10 -C 250 -o filtered_A
 # Run the genotype command to generate a file of genotype likelihoods.
 mapgd genotype -p Arabidopsis.clean.pro -m filtered_Arabidopsis.map > Arabidopsis.genotype
 
+# Format genotype file for relatedness analysis
+# Remove the unnecessary header and footer
+awk '{if ($3 != "MN_FREQ" && $3 >= 0.0 && $3 <= 1.0) print}' Arabidopsis.genotype > f_Arabidopsis.genotype
+# Extract the header from the file of genotype likelihoods
+head -n -1 Arabidopsis.genotype | awk '{if ($3 == NULL || $1 ~ /^@/) print}' > header_Arabidopsis.genotype
+# Add footer which contains "@END_TABLE\n"
+footer_Arabidopsis.genotype
+# For large dataset: subsample a group of SNPs
+sub_sample.py F_Arabidopsis.genotype -N 200000 > 200K_F_Arabidopsis.genotype
+# Add the header and footer to the file of genotype likelihoods
+cat header_Arabidopsis.genotype F_Arabidopsis.genotype footer_Arabidopsis.genotype > wh_wf_F_Arabidopsis.genotype
+# With subsampling:
+# cat header_Arabidopsis.genotype 200K_F_Arabidopsis.genotype footer_Arabidopsis.genotype > wh_wf_200K_F_Arabidopsis.genotype
+
 # Run the relatedness command.
-mapgd relatedness -i Arabidopsis.genotype -o Arabidopsis
+mapgd relatedness -i wh_wf_F_Arabidopsis.genotype -o all_Arabidopsis
