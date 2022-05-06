@@ -1,4 +1,4 @@
-MAPGD output files are stored on [Figshare](https://figshare.com/s/070da50efcac742a25e2).
+MAPGD output files are stored on [Figshare](https://figshare.com/s/345244bc98fa0e8a6ab1).
 
 See [MAPGD](https://github.com/LynchLab/MAPGD) page for detailed descriptions of file types.
 
